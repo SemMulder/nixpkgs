@@ -82,7 +82,7 @@ let
   # filesystems we've delegated permissions to.
   buildAllowCommand = zfsAction: permissions: dataset: lib.escapeShellArgs [
     # Here we explicitly use the booted system to guarantee the stable API needed by ZFS
-    "-+/run/booted-system/sw/bin/zfs"
+    "+/run/booted-system/sw/bin/zfs"
     zfsAction
     "sanoid"
     (concatStringsSep "," permissions)
